@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduación & Fin de Año | Mutantes Fight Team</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="hero">
+            <div class="logos-container">
+                <img src="./assets/img/escudo-mutante-jor.png" alt="Mutantes Logo" class="logo">
+                <img src="./assets/img/escudo-gft-jor.png" alt="GFT Logo" class="logo">
+            </div>
+            <p>SEMINARIO ANUAL & GRADUACIONES</p>
+            <h1>CIERRE DE AÑO <br> <span>MUTANTES FIGHT TEAM</span></h1>
+            <p>Prof. Javier Cardozo - Faixa Preta 5º Grado</p>
+        </header>
+
+        <h2 class="section-title">🏆 El Gran Día</h2>
+
+        <div class="card">
+            <h3 style="color: var(--accent-red); margin-bottom: 10px;">Domingo 7/12</h3>
+
+            <div class="schedule-item">
+                <span>🥋 Graduaciones</span>
+                <span class="time">11:00 Hs</span>
+            </div>
+            <div class="schedule-item">
+                <span>🍖 Almuerzo Fin de Año</span>
+                <span class="time">13:00 Hs</span>
+            </div>
+
+            <div class="location-box">
+                <p><strong>Ubicación del Evento:</strong></p>
+                <span class="address">El Encon, Ruta Provincial 94 Med 3470</span>
+
+                <a href="https://goo.gl/maps/TU_LINK_REAL" target="_blank" class="btn btn-map">
+                    📍 Ver en Google Maps
+                </a>
+            </div>
+        </div>
+
+        <a href="#rsvp" class="btn btn-primary">CONFIRMAR ASISTENCIA AL ALMUERZO</a>
+
+        <h2 class="section-title">🥋 Seminario Técnico</h2>
+
+        <div class="card gft-style">
+            <div class="location-box" style="margin-bottom: 15px; background: transparent; padding: 0;">
+                <p><strong>Sede Central:</strong> Apolinario Figueroa 44</p>
+            </div>
+
+            <div class="schedule-item">
+                <span class="day">Jueves 4/12</span>
+                <div>
+                    <div style="text-align: right;">20:30 Hs <span style="font-size:0.8em; color:#888;">NOGI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <span class="day">Viernes 5/12</span>
+                <div style="text-align: right;">
+                    <div>14:30 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
+                    <div>20:00 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <span class="day">Sábado 6/12</span>
+                <div>10:30 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
+            </div>
+
+            <a href="https://goo.gl/maps/TU_OTRO_LINK_REAL" target="_blank" class="btn btn-map">
+                📍 Ver Mapa Sede
+            </a>
+        </div>
+
+        <h2 class="section-title" id="rsvp">Confirmación</h2>
+        <div class="card">
+            <p style="margin-bottom: 15px; font-size: 0.9rem;">Por favor confirmar para calcular la comida del domingo.
+            </p>
+            <form id="rsvpForm">
+                <input type="text" id="nombre" placeholder="Nombre y Apellido" required>
+                <select id="graduacion" required>
+                    <option value="" disabled selected>Tu Graduación Actual</option>
+                    <option value="blanco">Faixa Branca</option>
+                    <option value="azul">Faixa Azul</option>
+                    <option value="roxo">Faixa Roxa</option>
+                    <option value="marrom">Faixa Marrom</option>
+                    <option value="preta">Faixa Preta</option>
+                </select>
+
+                <select id="asistencia" required>
+                    <option value="" disabled selected>¿A qué asistes?</option>
+                    <option value="solo">Asisto solo al almuerzo</option>
+                    <option value="acompanante">Voy con acompañante(s)</option>
+                    <option value="graduacion_solo">Solo voy a la graduación (sin almuerzo)</option>
+                </select>
+
+                <div id="div-acompanantes" style="display: none; margin-bottom: 10px;">
+                    <label style="font-size: 0.8rem; color: #ccc; margin-bottom: 5px; display: block;">¿Cuántos
+                        acompañantes van?</label>
+                    <input type="number" id="cantidad_acompanantes" placeholder="Ej: 2" min="1" max="10">
+                </div>
+
+                <button type="submit" class="btn btn-primary">ENVIAR CONFIRMACIÓN</button>
+            </form>
+        </div>
+
+        <p class="footer-text">
+            © 2025 Mutantes Fight Team | GFT Argentina
+        </p>
+
+    </div>
+
+    <script>
+        // ⚠️ PEGA AQUÍ LA URL DE TU APPS SCRIPT
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw7BviUl0MyYH712-R-3PYo80ol38umtwJgEei2DQuqULXqFHtOdaqkQp2wKB3EdVhalA/exec';
+
+        // 1. LÓGICA PARA MOSTRAR/OCULTAR INPUT EXTRA
+        const selectAsistencia = document.getElementById('asistencia');
+        const divAcompanantes = document.getElementById('div-acompanantes');
+        const inputCantidad = document.getElementById('cantidad_acompanantes');
+
+        selectAsistencia.addEventListener('change', function () {
+            if (this.value === 'acompanante') {
+                divAcompanantes.style.display = 'block';
+                inputCantidad.setAttribute('required', 'true'); // Lo hacemos obligatorio si está visible
+            } else {
+                divAcompanantes.style.display = 'none';
+                inputCantidad.removeAttribute('required'); // Quitamos obligatorio si está oculto
+                inputCantidad.value = ''; // Limpiamos el valor
+            }
+        });
+
+        // 2. ENVÍO DEL FORMULARIO
+        document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "ENVIANDO...";
+            btn.disabled = true;
+            btn.style.opacity = "0.7";
+
+            // Capturamos valores base
+            const nombre = document.getElementById('nombre').value;
+            const graduacion = document.getElementById('graduacion').value;
+            let asistenciaRaw = document.getElementById('asistencia').value;
+            let asistenciaFinal = "";
+
+            // Lógica para formatear el texto final de asistencia
+            if (asistenciaRaw === 'acompanante') {
+                const cantidad = inputCantidad.value;
+                asistenciaFinal = `Voy con acompañantes (Total extras: ${cantidad})`;
+            } else if (asistenciaRaw === 'solo') {
+                asistenciaFinal = "Asisto solo al almuerzo";
+            } else {
+                asistenciaFinal = "Solo voy a la graduación (sin almuerzo)";
+            }
+
+            const formData = {
+                nombre: nombre,
+                graduacion: graduacion,
+                asistencia: asistenciaFinal // Enviamos el texto combinado
+            };
+
+            // Link de WhatsApp
+            const telefonoProfesor = "5491161966833";
+
+            const mensajeWA = `Hola, soy ${formData.nombre} (${formData.graduacion}). ${formData.asistencia}. Oss!`;
+            const urlWA = `https://wa.me/${telefonoProfesor}?text=${encodeURIComponent(mensajeWA)}`;
+
+            // Enviar a Google Sheets
+            fetch(SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(() => {
+                    setTimeout(() => {
+                        window.open(urlWA, '_blank');
+                        alert('¡Datos registrados correctamente! Te redirigimos a WhatsApp.');
+
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.style.opacity = "1";
+                        document.getElementById('rsvpForm').reset();
+                        // Ocultar de nuevo el campo extra tras resetear
+                        divAcompanantes.style.display = 'none';
+                    }, 500);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Hubo un error de conexión, pero te redirigimos a WhatsApp para confirmar.');
+                    window.open(urlWA, '_blank');
+
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                });
+        });
+    </script>
+</body>
+
+</html>
