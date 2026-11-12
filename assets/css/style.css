@@ -210,6 +210,7 @@ select {
     color: white;
     border-radius: 6px;
     font-family: inherit;
+    font-size: 16px; /* Evita el zoom automático en Safari (iOS / iPhone) */
 }
 
 input:focus,
@@ -221,7 +222,58 @@ select:focus {
 /* FOOTER */
 .footer-text {
     text-align: center;
-    color: #555;
+    color: #777;
     font-size: 0.8rem;
     margin-top: 30px;
+    padding-bottom: 25px;
 }
+
+.footer-text a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.footer-text a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN (MÓVILES) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 25px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h1 span {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .logo {
+        width: 85px;
+        height: 85px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+}
+

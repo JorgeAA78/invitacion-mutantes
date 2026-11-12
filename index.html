@@ -29,7 +29,7 @@
         <h2 class="section-title">🏆 Graduaciones y Almuerzo </h2>
 
         <div class="card">
-            <h3 style="color: var(--accent-red); margin-bottom: 10px;">Domingo 7/12</h3>
+            <h3 style="color: var(--accent-red); margin-bottom: 10px;">Sabado 12/12</h3>
 
             <div class="schedule-item">
                 <span>🥋 Graduaciones</span>
@@ -44,8 +44,8 @@
                 style="margin-top: 8px; font-size: 0.9rem; color: #ccc; text-align: center; border-top: 1px dashed #333; padding-top: 8px;">
                 <p style="margin-bottom: 5px; color: #fff; font-weight: bold;">Valor: $20.000 Adultos | $10.000 Niños
                 </p>
-                Alias: <strong style="color: var(--accent-yellow);">mutantes26</strong> <br>
-                (Rita Mercedes Brito)
+                Alias: <strong style="color: var(--accent-yellow);">echazubps</strong> <br>
+                (Pablo Sebastian Echazu Bloser)
             </div>
 
             <div class="location-box">
@@ -64,61 +64,52 @@
 
         <div class="card gft-style">
             <div class="location-box" style="margin-bottom: 15px; background: transparent; padding: 0;">
-                <p><strong>Sede Central:</strong> Apolinario Figueroa 44</p>
+                <p><strong>Mutantes Fight Team:</strong> Pasaje Apolinario Figueroa 44, Salta</p>
             </div>
 
             <div class="schedule-item">
-                <span class="day">Jueves 4/12</span>
-                <div>
-                    <div style="text-align: right;">20:00 Hs <span style="font-size:0.8em; color:#888;">NOGI</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <span class="day">Viernes 5/12</span>
+                <span class="day">Viernes 11/12</span>
                 <div style="text-align: right;">
-                    <div>14:00 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
-                    <div>20:00 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
+                    <div>Primer Turno 14:30 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
+                    <div>Segundo Turno 20:00 Hs <span style="font-size:0.8em; color:#888;">Kimono</span></div>
                 </div>
-            </div>
-
-            <div class="schedule-item">
-                <span class="day">Sábado 6/12</span>
-                <div>10:00 Hs <span style="font-size:0.8em; color:#888;">NOGI</span></div>
             </div>
 
             <div
                 style="margin-top: 8px; font-size: 0.9rem; color: #ccc; text-align: center; border-top: 1px dashed #333; padding-top: 8px;">
                 <p style="margin-bottom: 5px; color: #fff; font-weight: bold;">Valor: $30.000</p>
-                Alias: <strong style="color: var(--accent-yellow);">mutantesbjjlemon</strong> <br>
-                (Pablo Sebastian Echazu)
+                Alias: <strong style="color: var(--accent-yellow);">echazubps</strong> <br>
+                (Pablo Sebastian Echazu Bloser)
             </div>
 
-            <a href="https://maps.app.goo.gl/LGqyfVx3qsBM2R966" target="_blank" class="btn btn-map">
-                📍 Ver Mapa Sede
+            <a href="https://maps.app.goo.gl/NRhxTzadtuhYw16e9" target="_blank" class="btn btn-map">
+                📍 Ver Mapa Gym
             </a>
         </div>
 
         <h2 class="section-title" id="rsvp">Confirmación</h2>
         <div class="card">
-            <p style="margin-bottom: 15px; font-size: 0.9rem;">Por favor confirmar para calcular la comida del domingo.
+            <p style="margin-bottom: 15px; font-size: 0.9rem;">Por favor confirmar para calcular la comida del Sabado.
             </p>
             <form id="rsvpForm">
                 <input type="text" id="nombre" placeholder="Nombre y Apellido" required>
                 <select id="graduacion" required>
                     <option value="" disabled selected>Tu Graduación Actual</option>
                     <option value="blanco">Faixa Branca</option>
+                    <option value="gris">Faixa Gris</option>
+                    <option value="amarillo">Faixa Amarillo</option>
+                    <option value="naranja">Faixa Naranja</option>
+                    <option value="verde">Faixa Verde</option>
                     <option value="azul">Faixa Azul</option>
-                    <option value="roxo">Faixa Roxa</option>
-                    <option value="marrom">Faixa Marrom</option>
+                    <option value="violeta">Faixa Violeta</option>
+                    <option value="marron">Faixa Marron</option>
                     <option value="preta">Faixa Preta</option>
                 </select>
 
                 <select id="asistencia" required>
                     <option value="" disabled selected>¿A qué asistes?</option>
                     <option value="solo">Voy al almuerzo y graduación SIN acompañante (s)</option>
-                    <option value="acompanante">Voy con acompañante(s)</option>
+                    <option value="acompanante">Voy al almuerzo y graduación CON acompañante (s)</option>
                     <option value="graduacion_solo">Solo voy a la graduación (sin almuerzo)</option>
                 </select>
 
@@ -132,15 +123,16 @@
             </form>
         </div>
 
-        <p class="footer-text">
-            © 2025 Mutantes Fight Team | GFT Argentina
-        </p>
+        <footer class="footer-text">
+            <p>© 2026 Mutantes Fight Team | GFT Argentina</p>
+            <p style="margin-top: 8px;">Creado por <a href="https://elev8-one.vercel.app/" target="_blank" rel="noopener noreferrer">Elev8</a></p>
+        </footer>
 
     </div>
 
     <script>
         // ⚠️ PEGA AQUÍ LA URL DE TU APPS SCRIPT
-        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw7BviUl0MyYH712-R-3PYo80ol38umtwJgEei2DQuqULXqFHtOdaqkQp2wKB3EdVhalA/exec';
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw2Za3FtkzeWtxOU55ESUaCGJ-VkNa6mLqqD7J6BPYP5EMtZOJi2dLukvfUxnsPj_2b_g/exec';
 
         // 1. LÓGICA PARA MOSTRAR/OCULTAR INPUT EXTRA
         const selectAsistencia = document.getElementById('asistencia');
@@ -191,7 +183,7 @@
             };
 
             // Link de WhatsApp
-            const telefonoProfesor = "+5493874840069";
+            const telefonoProfesor = "+5493872254407";
 
             const mensajeWA = `Hola, soy ${formData.nombre} (${formData.graduacion}). ${formData.asistencia}. Oss!`;
             const urlWA = `https://wa.me/${telefonoProfesor}?text=${encodeURIComponent(mensajeWA)}`;
